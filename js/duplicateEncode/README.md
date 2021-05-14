@@ -9,4 +9,4 @@ The goal of this exercise is to convert a string to a new string where each char
 "Success" => ")())())"
 "(( @" => "))(("
 
-Time: 871ms
+Time: 655ms

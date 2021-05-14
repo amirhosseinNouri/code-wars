@@ -2,10 +2,11 @@ function duplicateEncode(word) {
   const characters = word.toLowerCase().split('');
   let encodedWord = '';
   for (let i = 0; i < word.length; i++) {
+    var currentCharacter = characters[i];
     var prevElements = getPrevElements(characters, i);
     var nextElements = getNextElements(characters, i);
-    var prevIndex = prevElements.indexOf(characters[i]);
-    var nextIndex = nextElements.indexOf(characters[i]);
+    var prevIndex = prevElements.indexOf(currentCharacter);
+    var nextIndex = nextElements.indexOf(currentCharacter);
     encodedWord += encode(isUnique(prevIndex, nextIndex));
   }
 
