@@ -16,3 +16,4 @@ The tests will always use some integral number, so don't worry about that in dyn
 26 => false
 
 Solution 1 : 856ms
+Solution 2 : 753ms
