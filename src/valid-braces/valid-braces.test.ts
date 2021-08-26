@@ -11,3 +11,7 @@ test('Only open braces should return false', () => {
 test('valid combination of all three kinds of braces should return true', () => {
   expect(validBraces('(([[{{()}}]]))')).toBe(true);
 });
+
+test('Only close braces should be invalid', () => {
+  expect(validBraces(')))]]}}))')).toBe(false);
+});

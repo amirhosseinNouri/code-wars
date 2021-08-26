@@ -1,14 +1,17 @@
-function validBraces(braces: string): boolean {
-  const stack: Array<string> = [];
-  const splitedBraces = braces.split('');
-  const braceMap: { [close: string]: string } = {
-    ')': '(',
-    ']': '[',
-    '}': '{',
-  };
+type BraceMap = { [close: string]: string };
 
-  for (let i = 0; i < splitedBraces.length; i++) {
-    const currentCharacter = splitedBraces[i];
+const closeToOpenBracesMap: BraceMap = {
+  ')': '(',
+  ']': '[',
+  '}': '{',
+};
+
+function validBraces(braces: string): boolean {
+  const stack: string[] = [];
+  const split: string[] = braces.split('');
+
+  for (let i = 0; i < split.length; i++) {
+    const currentCharacter = split[i];
 
     if (
       currentCharacter === '(' ||
@@ -18,7 +21,7 @@ function validBraces(braces: string): boolean {
       stack.push(currentCharacter);
     } else {
       const lastChar = stack.pop();
-      if (lastChar !== braceMap[currentCharacter]) {
+      if (lastChar !== closeToOpenBracesMap[currentCharacter]) {
         return false;
       }
     }
